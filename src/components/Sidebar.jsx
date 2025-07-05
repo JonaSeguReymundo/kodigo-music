@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Sidebar = () => (
-  <aside className="bg-gray-900 text-white w-60 h-screen p-4">
-    <ul className="space-y-2">
-      <li className="hover:text-green-400">Inicio</li>
-      <li className="hover:text-green-400">Explorar</li>
-      <li className="hover:text-green-400">Tu biblioteca</li>
+  <aside className="bg-[#000000] text-white w-64 h-screen p-6 hidden md:block">
+    <h2 className="text-2xl font-bold mb-8 text-green-500">Menú</h2>
+    <ul className="space-y-4 text-sm">
+      <li className="hover:text-green-400 cursor-pointer">🏠 Inicio</li>
+      <li className="hover:text-green-400 cursor-pointer">🔍 Explorar</li>
+      <li className="hover:text-green-400 cursor-pointer">🎶 Tu biblioteca</li>
     </ul>
   </aside>
 );

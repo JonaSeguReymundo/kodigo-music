@@ -40,33 +40,40 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">Iniciar sesión</h2>
-
-      <input
-        {...register("email", { required: "El correo es requerido" })}
-        placeholder="Correo"
-        className="input mb-2 w-full p-2 border border-gray-300 rounded"
-      />
-      {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-
-      <input
-        type="password"
-        {...register("password", { required: "La contraseña es requerida" })}
-        placeholder="Contraseña"
-        className="input mb-2 w-full p-2 border border-gray-300 rounded"
-      />
-      {errors.password && <p className="text-red-500">{errors.password.message}</p>}
-
-      {authError && <p className="text-red-500 mb-2">{authError}</p>}
-
-      <button
-        type="submit"
-        className="bg-green-500 text-white px-4 py-2 rounded w-full"
+    <div className="min-h-screen bg-[#121212] flex items-center justify-center px-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-[#1e1e1e] text-white p-8 rounded-xl shadow-lg w-full max-w-md"
       >
-        Entrar
-      </button>
-    </form>
+        <h2 className="text-2xl font-bold mb-6 text-green-500 text-center">
+          Iniciar sesión en Kodigo Music
+        </h2>
+
+        <input
+          {...register("email", { required: "El correo es requerido" })}
+          placeholder="Correo"
+          className="mb-4 w-full p-3 bg-[#2a2a2a] text-white rounded border border-[#444] focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+        {errors.email && <p className="text-red-500 text-sm mb-2">{errors.email.message}</p>}
+
+        <input
+          type="password"
+          {...register("password", { required: "La contraseña es requerida" })}
+          placeholder="Contraseña"
+          className="mb-4 w-full p-3 bg-[#2a2a2a] text-white rounded border border-[#444] focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+        {errors.password && <p className="text-red-500 text-sm mb-2">{errors.password.message}</p>}
+
+        {authError && <p className="text-red-500 text-sm mb-4">{authError}</p>}
+
+        <button
+          type="submit"
+          className="w-full bg-green-500 hover:bg-green-600 transition-colors py-2 rounded font-semibold"
+        >
+          Entrar
+        </button>
+      </form>
+    </div>
   );
 };
 

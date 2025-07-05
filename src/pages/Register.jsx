@@ -18,13 +18,30 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">Registrarse</h2>
-      <input {...register("email", { required: true })} placeholder="Correo" className="input mb-2" />
-      {errors.email && <p>El correo es requerido</p>}
-      <input type="password" {...register("password", { required: true, minLength: 6 })} placeholder="Contraseña" className="input mb-2" />
-      {errors.password && <p>La contraseña es requerida (mín. 6 caracteres)</p>}
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Crear cuenta</button>
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-6 bg-[#1e1e1e] text-white rounded-lg mt-12">
+      <h2 className="text-2xl font-bold mb-6 text-green-500">Crear cuenta</h2>
+
+      <input
+        {...register("email", { required: true })}
+        placeholder="Correo"
+        className="mb-4 w-full p-2 bg-[#2a2a2a] text-white rounded border border-[#444]"
+      />
+      {errors.email && <p className="text-red-500 text-sm mb-2">El correo es requerido</p>}
+
+      <input
+        type="password"
+        {...register("password", { required: true, minLength: 6 })}
+        placeholder="Contraseña"
+        className="mb-4 w-full p-2 bg-[#2a2a2a] text-white rounded border border-[#444]"
+      />
+      {errors.password && <p className="text-red-500 text-sm mb-2">La contraseña debe tener al menos 6 caracteres</p>}
+
+      <button
+        type="submit"
+        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded w-full"
+      >
+        Registrarse
+      </button>
     </form>
   );
 };

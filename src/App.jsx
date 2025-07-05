@@ -7,8 +7,10 @@ import Navbar from './components/Navbar';
 const App = () => (
   <AuthProvider>
     <Router>
-      <Navbar />
-      <AppRouter />
+      <div className="bg-[#121212] min-h-screen text-white font-sans">
+        <Navbar />
+        <AppRouter />
+      </div>
     </Router>
   </AuthProvider>
 );
